@@ -1,3 +1,5 @@
+#Tudo está com os meus nomes pois eu ainda não sei qual as regras de nomes utilizar
+
 #url para pesquisar
 url = "bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar"
 
@@ -13,16 +15,8 @@ indice_interrogacao = url.find('?')
 tamanho_url = len(url)
 url_base = url[0:indice_interrogacao]
 url_parametros = url[indice_interrogacao+1:tamanho_url+1]
-# print(url_parametros)
 
-# achando parametros
-# primeiro parametro acha a partir do ? ate o igual,  resto vai do & ate o igual
-# indice_do_igual3 = url_parametros.find("=")
-# indice_do_igual2 = url_parametros.rfind("=")
-# indice_do_divisor = url_parametros.find('&', indice_do_igual)
-# lista_de_parametros = [url_parametros[:indice_do_igual], url_parametros[indice_do_divisor+1:indice_do_igual2]]
-# # print(lista_de_parametros)
-
+# achando nome dos parametros
 igual = "="
 indice = 0
 lista_dos_iguais = []
@@ -48,7 +42,7 @@ for i in lista_dos_iguais:
 
 print(lista_de_parametros)
 
-# achando paramentros
+# achando valor dos paramentros
 print(url_parametros)
 nome_do_paramentro = "quantidade"
 achar_parametro = url_parametros.find(nome_do_paramentro)
@@ -65,20 +59,3 @@ else:
     valor = url_parametros[indice_do_parametro:achar_divisor]
 
 print(valor)
-
-# print(url_parametros)
-# parametro_busca = 'moedaOrigem'
-# indice_parametro = url_parametros.find(parametro_busca)
-# print(indice_parametro)
-#
-# indice_valor = indice_parametro + len(parametro_busca) + 1
-# print(indice_valor)
-#
-# indice_e_comercial = url_parametros.find('&', indice_valor)
-# print(indice_e_comercial)
-#
-# if indice_e_comercial == -1:
-#     valor = url_parametros[indice_valor:]
-# else:
-#     valor = url_parametros[indice_valor:indice_e_comercial]
-# print(valor)
